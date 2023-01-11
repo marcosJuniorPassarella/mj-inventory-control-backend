@@ -1,7 +1,11 @@
 import prismaCLient from "../../prisma/index";
 
-class ListByCategoryService {
-  async execute(category_id: string) {
+interface ProductByCategoryId {
+  category_id: string;
+}
+
+class ListProductByCategoryService {
+  async execute({ category_id }: ProductByCategoryId) {
     const findByCategory = await prismaCLient.product.findMany({
       where: {
         category_id: category_id,
@@ -11,4 +15,4 @@ class ListByCategoryService {
   }
 }
 
-export { ListByCategoryService };
+export { ListProductByCategoryService };
