@@ -1,0 +1,3 @@
+interface CategoryRequest {
+    name: string;
+}
