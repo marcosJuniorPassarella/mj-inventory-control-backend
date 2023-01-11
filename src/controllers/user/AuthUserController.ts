@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { AuthUserService } from "../../services/user/AuthUserService";
-import { AuthRequest } from "../../models/interfaces/AuthRequest";
+import { AuthRequest } from "../../models/interfaces/auth/AuthRequest";
 
 class AuthUserController {
   async handle(req: Request, res: Response) {
