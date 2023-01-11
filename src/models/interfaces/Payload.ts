@@ -1,3 +1,3 @@
-interface Payload {
+export interface Payload {
   sub: string;
 }

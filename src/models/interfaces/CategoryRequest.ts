@@ -1,3 +1,3 @@
-interface CategoryRequest {
+export interface CategoryRequest {
     name: string;
 }
