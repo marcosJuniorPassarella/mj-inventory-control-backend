@@ -12,4 +12,4 @@ class RemoveCategoryService {
   }
 }
 
-export { RemoveCategoryRequest };
+export { RemoveCategoryService };
