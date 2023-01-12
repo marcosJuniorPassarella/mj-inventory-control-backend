@@ -8,6 +8,7 @@ class CreateProductService {
     description,
     banner,
     category_id,
+    amount
   }: ProductRequest) {
     const product = await prismaCLient.product.create({
       data: {
@@ -16,6 +17,7 @@ class CreateProductService {
         description: description,
         banner: banner,
         category_id: category_id,
+        amount: +amount
       },
     });
     return product;

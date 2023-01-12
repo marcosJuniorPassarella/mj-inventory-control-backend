@@ -4,7 +4,7 @@ import { ProductRequest } from "../../models/interfaces/product/ProductRequest";
 
 class CreateProductController {
   async handle(req: any, res: Response) {
-    const { name, price, description, category_id }: ProductRequest = req.body;
+    const { name, price, description, category_id, amount }: ProductRequest = req.body;
     const createProductService = new CreateProductService();
 
     if (!req.file) {
@@ -17,6 +17,7 @@ class CreateProductController {
         description,
         banner,
         category_id,
+        amount
       });
       return res.json(product);
     }
