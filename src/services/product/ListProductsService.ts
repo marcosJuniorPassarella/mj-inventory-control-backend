@@ -1,6 +1,6 @@
 import prismaCLient from "../../prisma/index";
 
-class ListProductService {
+class ListProductsService {
   async execute() {
     const products = await prismaCLient.product.findMany({
       select: {
@@ -15,4 +15,4 @@ class ListProductService {
   }
 }
 
-export { ListProductService };
+export { ListProductsService };
