@@ -1,3 +1,4 @@
+import { CategoryRequest } from "../../models/interfaces/category/CategoryRequest";
 import prismaCLient from "../../prisma";
 
 class CreateCategoryService {
