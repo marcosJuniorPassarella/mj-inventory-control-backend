@@ -1,0 +1,13 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API MJ Inventory Control",
+    "description": "Esta API tem como objetivo o controle de estoque completo de seu negócio.",
+    "termsOfService": "http://localhost:3333/terms",
+    "contact": {
+      "email": "mjworks2020@outlook.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": []
+}
