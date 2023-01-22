@@ -66,9 +66,48 @@
         }
       }
     },
+    "/v1/me?user_id={user_id}": {
+      "get": {
+        "description": "Busca de um usuário por id",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "Id do usuário",
+            "required": "true",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseCreateUser"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro"
+          }
+        }
+      }
+    },
     "/v1/category": {
       "post": {
         "description": "Criar nova categoria",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "description": "Dados de entrada necessários para a criação de uma nova categoria",
           "content": {
@@ -170,6 +209,14 @@
             "type": "string"
           }
         }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "description": "Autentificação utilizando JWT",
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }
