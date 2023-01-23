@@ -100,6 +100,30 @@
         }
       }
     },
+    "/v1/user/remove?user_id={user_id}": {
+      "delete": {
+        "description": "Remover usuário",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "Id do usuário",
+            "required": "true",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResponseDeleteUser"
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/category": {
       "post": {
         "description": "Criar nova categoria",
@@ -209,6 +233,9 @@
             "type": "string"
           }
         }
+      },
+      "ResponseDeleteUser": {
+        "type": "object"
       }
     },
     "securitySchemes": {
