@@ -247,6 +247,52 @@
           }
         }
       }
+    },
+    "/v1/product": {
+      "post": {}
+    },
+    "/v1/product": {},
+
+    "/v1/sale/product?product_id={product_id}": {
+      "put": {
+        "description": "Efetuar venda de um produto",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "Id do produto",
+            "required": "true",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "requestBody": {
+          "description": "Dados de entrada necessários para efetuar a venda de um produto",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestSaleProduct"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseSaleProduct"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
 
@@ -346,6 +392,28 @@
         "properties": {
           "message": {
             "type": "string"
+          }
+        }
+      },
+      "RequestSaleProduct": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          }
+        }
+      },
+      "ResponseSaleProduct": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
           }
         }
       }
