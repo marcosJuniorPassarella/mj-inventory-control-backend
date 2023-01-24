@@ -37,7 +37,7 @@ router.put(
   isAuthenticated,
   new EditCategoryController().handle
 );
-router.get("/category", isAuthenticated, new ListCategoryController().handle);
+router.get("/category/all", isAuthenticated, new ListCategoryController().handle);
 router.delete(
   "/category/remove",
   isAuthenticated,
