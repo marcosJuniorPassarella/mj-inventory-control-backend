@@ -249,10 +249,25 @@
       }
     },
     "/v1/product": {
-      "post": {}
+      "post": {
+        "description": "Criar produto",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "description": "Dados necessários para a criação de um produto",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestCreateProduct"
+              }
+            }
+          }
+        }
+      }
     },
-    "/v1/product": {},
-
     "/v1/sale/product?product_id={product_id}": {
       "put": {
         "description": "Efetuar venda de um produto",
@@ -416,6 +431,33 @@
             "type": "number"
           }
         }
+      },
+      "RequestCreateProduct": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string",
+            "format": "binary"
+          },
+          "category_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      },
+      "ResponseCreateProduct": {
+        "type": "object"
       }
     },
     "securitySchemes": {
