@@ -362,6 +362,37 @@
         }
       }
     },
+    "/v1/product/remove?product_id={product_id}": {
+      "delete": {
+        "description": "Deleta um produto",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "Id do produto",
+            "required": "true",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseCreateProduct"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/sale/product?product_id={product_id}": {
       "put": {
         "description": "Efetuar venda de um produto",
