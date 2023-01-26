@@ -265,6 +265,17 @@
               }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseCreateProduct"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -439,7 +450,7 @@
             "type": "string"
           },
           "price": {
-            "type": "number"
+            "type": "string"
           },
           "description": {
             "type": "string"
@@ -457,7 +468,36 @@
         }
       },
       "ResponseCreateProduct": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "banner": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "category_id": {
+            "type": "string"
+          }
+        }
       }
     },
     "securitySchemes": {
